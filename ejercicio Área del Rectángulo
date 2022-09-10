@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    Base <input type="number" id="Base" placeholder="Ingrese Valor"></input>
+    <br><br>
+    Altura <input type="number" id="Altura" placeholder="Ingrese Valor"></input>
+    <br><br>
+   <button id="btn"> Calcular </button>
+   <p id="paragraph"> El area es: </p>
+   
+   
+    <script src="src/index.ts"></script>
+  </body>
+</html>
+
+
+
+
+import "./styles.css";
+
+const inputBase = document.getElementById("Base");
+const inputAltura = document.getElementById("Altura");
+const btn = document.getElementById("btn");
+const paragraph = document.getElementById("paragraph");
+
+let base: number = 25;
+let altura: number = 5;
+let area: number = base * altura;
+console.log(area);
+
+btn.addEventListener("click", function () {
+  base = Number(inputBase.value);
+  altura = Number(inputAltura.value);
+  paragraph.innerText = area;
+});
