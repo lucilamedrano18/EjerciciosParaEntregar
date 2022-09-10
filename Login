@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <h1>Bienvenido!!!</h1>
+    <input type="text" id="nomeusuario" placeholder="Nombre Usuario" />
+    <br />
+    <br />
+    <input type="text" id="password" placeholder="Ingrese su clave" />
+    <br />
+    <br />
+    <button id="btn">Enviar</button>
+
+    <script src="src/index.ts"></script>
+  </body>
+</html>
+
+
+import "./styles.css";
+
+const inpuUsuario = document.getElementById("nomeusuario");
+const inpuPassword = document.getElementById("password");
+const btn = document.getElementById("btn");
+
+let usuario: string = "Juan";
+let clave: string = "claveJuan";
+let usuarioIngresado: string = inpuUsuario.value;
+let claveIngresada: string = inpuPassword.value;
+
+btn.addEventListener("click", function () {
+  if (usuario === inpuUsuario.value && clave === inpuPassword.value) {
+    console.log("los datos ingresados son correctos");
+    alert("Bienvenido");
+  } else {
+    console.log("Los datos ingresados son incorrectos");
+    alert("El Usuario y/o contraseñas son incorrectas");
+  }
+});
