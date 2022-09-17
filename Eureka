@@ -1,0 +1,55 @@
+<html>
+
+<head>
+	<title>Parcel Sandbox</title>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+
+<h1> Por favor, ingrese su clave </h1>
+<input type="text" placeholder="Clave" id="inputClave"></input>
+<br> <br>
+<button id="btn"> Ingresar </button>
+<br>
+<p id="paragraph"> </p>
+	<script src="src/index.ts">
+	</script>
+</body>
+
+</html>
+
+
+
+import "./styles.css";
+
+const inputClave = document.getElementById("inputClave");
+const btn = document.getElementById("btn");
+let paragraph = document.getElementById("paragraph");
+
+let clave = "eureka";
+let intentos = 3;
+let contrasena = inputClave.value;
+let contador = 0;
+
+btn.addEventListener("click", function () {
+  clave = "eureka";
+  intentos = 3;
+  contrasena = inputClave.value;
+
+  while (contador <= intentos) {
+    if (contrasena === clave) {
+      paragraph.innerText = "Bienvenido";
+      console.log("Bienvenido");
+    } else {
+      paragraph.innerText = "La clave ingresada es incorrecta";
+      console.log("La clave ingresada es incorrecta");
+    }
+    contador++;
+    if (contador === 4) {
+      paragraph.innerText = "El limite de intentos se han agotado";
+      console.log("El limite de intentos se han agotado");
+    }
+    break;
+  } //FIN WHILE
+});
