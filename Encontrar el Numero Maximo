@@ -1,0 +1,21 @@
+const usuarioValorEntrada: number = Number(
+  prompt(
+    "Para hallar el numero maximo ingrese numeros positivos o negativos, para salir ingrese 0"
+  )
+);
+let numeroMaximo: number = usuarioValorEntrada;
+let inicioConCero: boolean = false;
+
+while (usuarioValorEntrada !== 0) {
+  inicioConCero = true;
+  usuarioValorEntrada = Number(prompt("Ingrese un numero"));
+  if (usuarioValorEntrada > numeroMaximo) {
+    numeroMaximo = usuarioValorEntrada;
+  }
+} //FIN WHILE
+
+if (inicioConCero) {
+  console.log("El numero maximo de la serie es", numeroMaximo);
+} else {
+  console.log("No se han ingresado datos");
+}
