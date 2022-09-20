@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <h1>Promedio de notas</h1>
+    <br>
+    <h2>Notas del alumno:</h2>
+    <br>
+		<input type = "number" placeholder="Primer Trimestre" id="primerTrimestre"</input>
+		<br><br>
+		<input type = "number" placeholder="Segundo Trimestre" id="segundoTrimestre"</input>
+		<br><br>
+		<input type = "number" placeholder="Tercer Trimestre" id="tercerTrimestre"</input>
+		<br><br>
+		<button id="btn">Calcular </button>
+		<p id="Promedio">Promedio anual: </p>
+
+    <script src="src/index.ts"></script>
+  </body>
+</html>
+
+
+import "./styles.css";
+
+//Llamamos a los elementos de HTML
+let inputNota1 = document.getElementById("primerTrimestre");
+let inputNota2 = document.getElementById("segundoTrimestre");
+let inputNota3 = document.getElementById("tercerTrimestre");
+let btn = document.getElementById("btn");
+let promedio = document.getElementById("Promedio");
+
+//Inicializamos las variables en 0
+let nota1: number = 0;
+let nota2: number = 0;
+let nota3: number = 0;
+
+//Activación del botón
+btn?.addEventListener("click", () => {
+  nota1 = Number(inputNota1?.value);
+  nota2 = Number(inputNota2?.value);
+  nota3 = Number(inputNota3?.value);
+
+  let Promedio: number = (nota1 + nota2 + nota3) / 3;
+  promedio?.innerText += Promedio;
+});
