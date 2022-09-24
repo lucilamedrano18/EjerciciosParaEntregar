@@ -1,0 +1,18 @@
+import "./styles.css";
+
+let base: number = Number(prompt("Ingrese la Base"));
+let exponente: number = Number(prompt("Ingrese el Exponente"));
+
+function calcularPotencia(base: number, exponente: number): number {
+  let numero: number = 1;
+  if (exponente === 0) {
+    return 1;
+  } else {
+    for (let i: number = 1; i <= exponente; i++) {
+      numero = numero * base;
+    }
+    return numero;
+  }
+}
+const resultado = calcularPotencia(base, exponente);
+console.log(resultado);
